@@ -1,0 +1,51 @@
+.CODE
+
+caller PROC
+    mov rax, qword ptr [rsp + 8]
+    ret
+caller ENDP
+
+get_peb_loader PROC
+    xor rax, rax
+    mov rax, gs:[60h]
+    mov rax, [rax + 18h]
+    mov rax, [rax + 10h]
+    mov rax, [rax]
+    ret
+get_peb_loader ENDP
+
+get_loader_data_table_entry PROC
+    xor     rax, rax
+    mov     rax, gs:[60h]
+    mov     rax, [rax + 18h]
+    mov     rax, [rax + 10h]
+    mov     rax, [rax]
+    ret
+get_loader_data_table_entry ENDP
+
+get_caller PROC
+    mov rax, [rsp]
+    ret
+get_caller ENDP
+
+get_ntdll PROC
+    xor     rax, rax
+    mov     rax, gs:[60h]
+    mov     rax, [rax + 18h]
+    mov     rax, [rax + 20h]
+    mov     rax, [rax]
+    mov     rax, [rax + 20h]
+    ret
+get_ntdll ENDP
+
+get_kernel32 PROC
+    mov		rax, gs:[60h]
+	mov		rax, [rax + 18h]
+	mov		rax, [rax + 20h]
+	mov		rax, [rax]
+	mov		rax, [rax]
+	mov		rax, [rax + 20h]
+    ret
+get_kernel32 ENDP
+
+END
