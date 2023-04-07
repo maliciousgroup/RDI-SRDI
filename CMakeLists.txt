@@ -23,8 +23,3 @@ add_executable(rdi ${MASM_OBJECTS} main.c src/c/peb.c)
 
 target_link_options(rdi PRIVATE -static -nostdlib)
 set_target_properties(rdi PROPERTIES LINK_FLAGS "-e dll_start")
-
-#target_link_libraries(rdi PRIVATE "-nostdlib")
-
-
-
