@@ -1,6 +1,3 @@
-#ifndef RDI_DEFS_H
-#define RDI_DEFS_H
-
 #include "structs.h"
 
 #define NtCurrentThread() ( (HANDLE)(LONG_PTR) -2 )
@@ -27,5 +24,3 @@ typedef NTSTATUS (__stdcall *NtWriteVirtualMemory_t)(HANDLE ProcessHandle, PVOID
 typedef NTSTATUS (__stdcall *NtReadVirtualMemory_t)(HANDLE ProcessHandle,PVOID BaseAddress,PVOID Buffer,SIZE_T BufferSize,PSIZE_T NumberOfBytesRead);
 typedef NTSTATUS (__stdcall *NtFlushInstructionCache_t)(HANDLE ProcessHandle, PVOID BaseAddress, SIZE_T Length);
 typedef NTSTATUS (__stdcall *NtQueryInformationFile_t)(HANDLE FileHandle,PIO_STATUS_BLOCK IoStatusBlock,PVOID FileInformation,ULONG Length,FILE_INFORMATION_CLASS FileInformationClass);
-
-#endif //RDI_DEFS_H
