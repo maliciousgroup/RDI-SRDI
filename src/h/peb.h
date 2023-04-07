@@ -1,6 +1,3 @@
-#ifndef RDI_PEB_H
-#define RDI_PEB_H
-
 #include <stdint.h>
 #include "defs.h"
 
@@ -26,4 +23,3 @@ extern void *get_ntdll();
 
 void *get_proc_address_by_hash(void *dll_address, uint32_t function_hash);
 
-#endif //RDI_PEB_H
